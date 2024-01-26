@@ -1,4 +1,8 @@
-# :pushpin: Gerenciador de Tarefas 
+# :pushpin: Gerenciador de Tarefas
+
+![Status](https://img.shields.io/badge/status-Desenvolvimento-green)
+
+
 <br>
 Este é um pequeno protótipo de um simples gerenciador de tarefas, cuja principal função é enviar lembretes das tarefas registradas via mensagem para qualquer operadora.
 
@@ -6,7 +10,7 @@ Este é um pequeno protótipo de um simples gerenciador de tarefas, cuja princip
 <br>
 Este projeto é apenas um protótipo para teste, afim de aprimorar ideias e testar funcionalidades para construção e evolução de outras aplicações futuras.
 
-# :seedling: Status do projeto
+# :seedling:Status do projeto
 > :construction: Projeto em construção :construction:
 
 # :hammer: Funcionalidades do projeto
@@ -41,6 +45,18 @@ git pull origin main
 <br>
 Por fim, ao finalizar as mudanças adicionadas, execute o seguinte comando para atualizar este repositório:
 ```
+cd caminho-da-pasta-clonada
 git push origin main
 
 ```
+
+# :white_check_mark: Técnicas e tecnologias utilizadas
+- ```Java 21```
+- ```Eclipse IDE```
+- ```postgresSQL 16.1```
+- ```Orientação a objeto```
+
+# Autores
+
+| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/99358115?v=4" width=100><br><sub>joaosaiko14</sub>](https://github.com/joaosaiko14) |
+| :---: |
