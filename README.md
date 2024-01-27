@@ -19,7 +19,20 @@ Este projeto é apenas um protótipo para teste, afim de aprimorar ideias e test
 - `Adicionar tarefa`: Poderá ser adicionado tarefas incluindo campos como título, data e descrição.
 - `Lembrete via mensagem`: Os lembretes serão feitos via mensagem de texto para que o usuário der uma atenção maior para a tarefa registrada.
 
-# 🛠️ Abrir e rodar o projeto
+# :hammer_and_wrench: Configuração do Banco de Dados
+
+> [!NOTE]
+> O banco de dados funcionará de forma remota em futuras atualizações.
+
+Este projeto requer um banco de dados para armazenar informações de usuários e tarefas. Embora o banco de dados não esteja incluído no repositório por motivos de segurança, você pode visualizar a estrutura do banco de dados no diagrama abaixo.
+
+![Nome Alternativo](referênciaBD/GerenciadorTarefa.png)
+
+A estrutura inclui duas tabelas principais: user_name para armazenar o nome de usuários, user_number para armazenar os números associados aos usuários e task para armazenar informações sobre as tarefas associadas aos usuários.
+
+Certifique-se de criar o banco de dados e as tabelas conforme necessário para o seu ambiente de desenvolvimento. Para instruções detalhadas, consulte a documentação do seu sistema de gerenciamento de banco de dados PostgreSQL.
+
+# :rocket: Abrir e rodar o projeto
 
 > [!NOTE]
 > Para executar os comandos a seguir é necessário ter o git instalado na sua máquina
