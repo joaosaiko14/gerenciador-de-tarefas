@@ -8,11 +8,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import AdicionandoBD.AddUsuarioBD;
+import ValidacaoBD.ValidacaoUser;
 
 public class TelaLogin extends JFrame {
 
@@ -68,9 +70,22 @@ public class TelaLogin extends JFrame {
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				TelaInicial TelaInicial = new TelaInicial();
-				TelaInicial.setVisible(true);
+				String txtNumero = textFieldNum.getText();
+
+				Long numero = Long.parseLong(txtNumero);
+
+				String nome = textFieldNome.getText();
+				ValidacaoUser valicaoUser = new ValidacaoUser();
+				
+				if (valicaoUser.Validacao(nome, numero)) {
+					JOptionPane.showMessageDialog(null, "Login realizado com sucesso!", "Operação bem-sucedida", JOptionPane.INFORMATION_MESSAGE);
+					frame.setVisible(false);
+					TelaInicial TelaInicial = new TelaInicial();
+					TelaInicial.setVisible(true);
+				}else {
+					JOptionPane.showMessageDialog(null, "Login inválido, tente novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
+				}
+				
 			}
 		});
 		btnEntrar.setBounds(199, 283, 95, 30);
