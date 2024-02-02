@@ -69,24 +69,31 @@ public class TelaLogin extends JFrame {
 
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String txtNumero = textFieldNum.getText();
-
-				Long numero = Long.parseLong(txtNumero);
-
-				String nome = textFieldNome.getText();
-				ValidacaoUser valicaoUser = new ValidacaoUser();
-				
-				if (valicaoUser.Validacao(nome, numero)) {
-					JOptionPane.showMessageDialog(null, "Login realizado com sucesso!", "Operação bem-sucedida", JOptionPane.INFORMATION_MESSAGE);
-					frame.setVisible(false);
-					TelaInicial TelaInicial = new TelaInicial();
-					TelaInicial.setVisible(true);
-				}else {
-					JOptionPane.showMessageDialog(null, "Login inválido, tente novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
-				}
-				
-			}
+		    public void actionPerformed(ActionEvent e) {
+		        String txtNumero = textFieldNum.getText();
+		        String nome = textFieldNome.getText();
+		        //verifica os campos se estão vazios
+		        if (nome.isEmpty() || txtNumero.isEmpty()) {
+		            JOptionPane.showMessageDialog(null, "Preencha todos os campos e tente novamente!", "Erro", JOptionPane.ERROR_MESSAGE);
+		        } else {
+		            try {
+		            	//validação de usuário 
+		                Long numero = Long.parseLong(txtNumero);
+		                ValidacaoUser validacaoUser = new ValidacaoUser();
+		                
+		                if (validacaoUser.Validacao(nome, numero)) {
+		                    JOptionPane.showMessageDialog(null, "Login realizado com sucesso!", "Operação bem-sucedida", JOptionPane.INFORMATION_MESSAGE);
+		                    frame.setVisible(false);
+		                    TelaInicial telaInicial = new TelaInicial();
+		                    telaInicial.setVisible(true);
+		                } else {
+		                    JOptionPane.showMessageDialog(null, "Login inválido, tente novamente!", "Campos Inválidos", JOptionPane.ERROR_MESSAGE);
+		                }
+		            } catch (NumberFormatException ex) {
+		                JOptionPane.showMessageDialog(null, "Número inválido! Digite um número válido.", "Erro", JOptionPane.ERROR_MESSAGE);
+		            }
+		        }
+		    }
 		});
 		btnEntrar.setBounds(199, 283, 95, 30);
 		contentPane.add(btnEntrar);
@@ -112,6 +119,6 @@ public class TelaLogin extends JFrame {
 			}
 		});
 		btnRegistrar.setBounds(299, 283, 95, 30);
-		contentPane.add(btnRegistrar);
+		contentPane.add(btnRegistrar);		
 	}
 }
